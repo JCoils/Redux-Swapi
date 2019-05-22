@@ -14,11 +14,11 @@ export const getChar = () => dispatch => {
     .get(
         `https://swapi.co/api/people/`
     )
-    .then(res => {
-        console.log(res);
+    .then(({ data }) => {
+        console.log(data);
         dispatch({
             type: FETCHING_CHARACTERS_SUCCESS,
-            payload: res.data
+            payload: data
         });
     })
     .catch(err => {
